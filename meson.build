@@ -8,4 +8,6 @@ project('utmost', 'c',
         meson_version : '>= 0.40.0',
         license: 'MIT')
 
-executable('utmost', 'main.c')
+src = ['main.c', 'parser.c', 'scanner.c', 'token.c']
+exe = executable('utmost', src)
+test('test', exe)
